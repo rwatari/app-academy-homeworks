@@ -17,12 +17,12 @@ class Simon
     show_sequence
     sleep(2)
     system("clear")
-    if require_sequence
-      round_success_message
-      @sequence_length += 1
-    else
-      @game_over = true
-    end
+    require_sequence
+    return if game_over
+    round_success_message
+    sleep(2)
+    system("clear")
+    @sequence_length += 1
   end
 
   def show_sequence
@@ -33,10 +33,11 @@ class Simon
   def require_sequence
     sequence_length.times do |i|
       player_input = gets.chomp.downcase
-      return false if seq[i] != player_input
+      if seq[i] != player_input
+        @game_over = true
+        break
+      end
     end
-
-    true
   end
 
   def add_random_color
@@ -49,7 +50,6 @@ class Simon
 
   def game_over_message
     puts "You lose!"
-    puts "Resetting game"
   end
 
   def reset_game
