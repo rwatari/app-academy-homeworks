@@ -1,0 +1,33 @@
+html, body, header, aside, section, footer, nav,
+h1, h2, ul, ol, li, figure, figcaption, img, a, form, label, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  background: transparent;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, figcaption, figure,
+footer, header, nav, section {
+  display: block;
+}
+body {
+  line-height: 1.5;
+}
+ol, ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+
+input[type="radio"], input[type="submit"], select {
+    cursor: pointer;
+    outline: none;
+}
